@@ -1,0 +1,6 @@
+#!/bin/sh -l
+# FILENAME:  mpi.sub
+module load devel
+
+cd $PBS_O_WORKDIR
+mpiexec -n 16 ./WordCount RawText_Large

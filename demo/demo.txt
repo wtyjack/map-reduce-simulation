@@ -1,0 +1,87 @@
+[Compile and Run]
+-bash-4.1$ make
+mpic++ -std=c++11 -fopenmp -c main.cpp
+mpic++ -std=c++11 -fopenmp -o WordCount main.o Mapper.o Reducer.o Reader.o Writer.o
+-bash-4.1$ mpirun -n 4 WordCount RawText
+Found: 39295.txt.utf-8.txt
+Found: 28054-tei.tei
+Found: 986.txt.utf-8.txt
+Found: 39288.txt.utf-8.txt
+Found: 27916.txt.utf-8.txt
+Found: 39293-0.txt
+Found: 600.txt.utf-8.txt
+Found: 39294.txt.utf-8.txt
+Found: 2554.txt.utf-8.txt
+Found: 2638.txt.utf-8.txt
+Found: 39297.txt.utf-8.txt
+Found: 39296.txt.utf-8.txt
+Found: 39290-0.txt
+Found: 36034.txt.utf-8.txt
+Found: 3183.txt.utf-8.txt
+Found: 1399.txt.utf-8.txt
+Found: 34114.txt.utf-8.txt
+Found: 2600.txt.utf-8.txt
+1: Mapper 0 started!
+2: Mapper 0 started!
+3: Mapper 0 started!
+1: Reader - RawText/39295.txt.utf-8.txt recieved!
+2: Reader - RawText/28054-tei.tei recieved!
+3: Reader - RawText/986.txt.utf-8.txt recieved!
+3: Reader - RawText/39288.txt.utf-8.txt recieved!
+1: Reader - RawText/27916.txt.utf-8.txt recieved!
+1: Reader - RawText/39293-0.txt recieved!
+3: Reader - RawText/600.txt.utf-8.txt recieved!
+3: Reader - RawText/39294.txt.utf-8.txt recieved!
+1: Reader - RawText/2554.txt.utf-8.txt recieved!
+3: Reader - RawText/2638.txt.utf-8.txt recieved!
+1: Reader - RawText/39297.txt.utf-8.txt recieved!
+2: Reader - RawText/39296.txt.utf-8.txt recieved!
+1: Reader - RawText/39290-0.txt recieved!
+3: Reader - RawText/3183.txt.utf-8.txt recieved!
+1: Reader - RawText/36034.txt.utf-8.txt recieved!
+3: Reader - RawText/1399.txt.utf-8.txt recieved!
+2: Reader - RawText/34114.txt.utf-8.txt recieved!
+2: Reader - RawText/2600.txt.utf-8.txt recieved!
+1: Mapper 0 finished!
+3: Mapper 0 finished!
+2: Mapper 0 finished!
+2: Gathering started!
+0: Gathering started!
+1: Gathering started!
+3: Gathering started!
+0: Reducer 0 started!
+3: Reducer 0 started!
+2: Reducer 0 started!
+1: Reducer 0 started!
+3: Reducer 0 finished!
+1: Reducer 0 finished!
+3: Writer 0 started!
+1: Writer 0 started!
+0: Reducer 0 finished!
+2: Reducer 0 finished!
+2: Writer 0 started!
+3: Writer 0 finished!
+1: Writer 0 finished!
+0: Writer 0 started!
+1: total time - 2.28162
+2: Writer 0 finished!
+3: total time - 2.28314
+2: total time - 2.2886
+0: Writer 0 finished!
+0: total time - 2.305
+
+[Result] p_resultx_y: x=rank, y=tid
+-bash-4.1$ cd output/
+-bash-4.1$ ls
+p_result0_0  p_result1_0  p_result2_0  p_result3_0
+-bash-4.1$ head p_result0_0 
+disliked, 82
+translation, 19
+spelled, 7
+ribboned, 1
+testy, 1
+periodic, 16
+Charmante, 2
+culprit, 7
+blazoned, 4
+Physiology, 1
